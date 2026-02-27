@@ -1,1 +1,6 @@
+//DECLARAMOS LAS VARIABLES PARA ALMACENAR LA ENERGÍA DEL JORDY Y ALESSANDRO
+let energiajordy = 100;
+let energiaalessandro = 100;
+
+
 
