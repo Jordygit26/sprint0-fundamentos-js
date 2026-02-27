@@ -23,3 +23,8 @@ console.log("!te has curado!, ahora tu energia es de " + energiaalessandro);
 
 
 };
+function superAtaquealessandro(){
+energiajordy -=50;
+console.log("!Haz usado un SuperAtaque!, al enemigo ahora le queda" + energiajordy +  "de energia restante" );
+
+};
