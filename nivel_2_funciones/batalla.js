@@ -14,3 +14,6 @@ console.log("QEl ataque ha sido exitoso!, el enemigo tiene" + energiajordy + "de
 
 
 };
+function defenderalessandro(){
+    console.log("el ataque enemigo a sido bloqueado");
+};
