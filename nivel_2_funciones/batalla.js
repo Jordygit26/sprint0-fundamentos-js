@@ -17,3 +17,9 @@ console.log("QEl ataque ha sido exitoso!, el enemigo tiene" + energiajordy + "de
 function defenderalessandro(){
     console.log("el ataque enemigo a sido bloqueado");
 };
+function recargarEnergiaalessandro(){
+energiaalessandro += 50;
+console.log("!te has curado!, ahora tu energia es de " + energiaalessandro);
+
+
+};
