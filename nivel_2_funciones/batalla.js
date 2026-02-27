@@ -12,5 +12,5 @@ function ataque() {
 }
 
 function defender() {
-    console.log("El héroe se pone alerta  " + energiaEnemigo);
+    console.log("El héroe se pone en guardia: " + energiaEnemigo);
 }
