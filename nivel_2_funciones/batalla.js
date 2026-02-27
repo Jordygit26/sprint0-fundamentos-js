@@ -10,3 +10,7 @@ function ataque() {
     energiaEnemigo -= 20;
     console.log("¡Ataque básico! Energía del enemigo: " + energiaEnemigo);
 }
+
+function defender() {
+    console.log("El héroe se pone alerta  " + energiaEnemigo);
+}
