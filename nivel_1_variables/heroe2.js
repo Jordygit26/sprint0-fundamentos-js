@@ -1,7 +1,7 @@
 // Fase 1: Simulador de Superhéroe
-let nombreHeroe = "Jordy"; 
+const nombreHeroe = "Jordy"; 
 let poder = "Teletransportación de corto alcance"; 
-let nivelEnergia = 100; 
+let nivelEnergia = 150; 
 let ciudad = "Trujillo"; 
 let enemigo = "Sombra Voraz"; 
 
