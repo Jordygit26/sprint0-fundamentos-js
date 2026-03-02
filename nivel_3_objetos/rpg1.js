@@ -18,4 +18,8 @@ function recibirDano(personaje) {
     console.log(personaje.nombre + " recibió daño. Vida: " + personaje.vida);
 }
 
-
+// SIMULACIÓN
+console.log("--- INICIO DEL RPG ---");
+subirNivel(jugador);
+recibirDano(jugador);
+console.log("Fuerza final: " + jugador.fuerza);
