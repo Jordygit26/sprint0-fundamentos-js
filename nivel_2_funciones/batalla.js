@@ -17,23 +17,25 @@ function recargarEnergiaJordy() {
     console.log("Jordy descansa un momento. Energía actual: " + energiaJordy);
 }.
 
-function ataquealessandro(){
-    energiajordy -= 20;
-console.log("QEl ataque ha sido exitoso!, el enemigo tiene" + energiajordy + "de energia restante");
+function superAtaque() {
+    energiaAlessandro -= 50;
+    console.log("¡ATAQUE ESPECIAL de Jordy! El impacto es crítico. Energía Alessandro: " + energiaAlessandro);
+}
+//PARTE DE ALESSANDRO
+function ataqueAlessandro() {
+    energiaJordy -= 20;
+    console.log("Alessandro contraataca. Energía de Jordy: " + energiaJordy);
+}
 
+function defenderAlessandro() {
+    console.log("Alessandro levanta su escudo para protegerse.");
+}
 
-};
-function defenderalessandro(){
-    console.log("el ataque enemigo a sido bloqueado");
-};
-function recargarEnergiaalessandro(){
-energiaalessandro += 50;
-console.log("!te has curado!, ahora tu energia es de " + energiaalessandro);
+function recargarEnergiaAlessandro() {
+    energiaAlessandro += 15;
+    console.log("Alessandro recupera fuerzas. Energía actual: " + energiaAlessandro);
+}
 
-
-};
-function superAtaquealessandro(){
-energiajordy -=50;
-console.log("!Haz usado un SuperAtaque!, al enemigo ahora le queda" + energiajordy +  "de energia restante" );
-
-};
+function escudoMagico() {
+    console.log("¡Alessandro activa el Escudo Mágico! Un aura brilla a su alrededor.");
+}
