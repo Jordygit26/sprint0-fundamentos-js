@@ -11,3 +11,8 @@ function ordenarComida(persona) {
     console.log(persona.nombre + " pidió un buen ceviche. Su hambre bajó a: " + persona.hambre);
 }
 
+function pagar(persona) {
+    persona.dinero -= 35; // El plato costó 35 soles
+    console.log(persona.nombre + " pagó la cuenta. Le quedan: " + persona.dinero + " soles.");
+}
+
