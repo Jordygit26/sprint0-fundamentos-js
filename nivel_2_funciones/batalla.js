@@ -39,3 +39,16 @@ function recargarEnergiaAlessandro() {
 function escudoMagico() {
     console.log("¡Alessandro activa el Escudo Mágico! Un aura brilla a su alrededor.");
 }
+
+
+// SIMULACIÓN DE LA BATALLA
+console.log("--- ¡COMIENZA EL DUELO EN TRUJILLO! ---");
+
+ataqueJordy();
+defenderAlessandro();
+ataqueAlessandro();
+escudoMagico(); // Aquí solo se muestra el mensaje de activación
+superAtaque();  // El daño entra normal porque aún no usamos "if"
+recargarEnergiaJordy();
+
+console.log("--- EL COMBATE CONTINÚA... ---");
