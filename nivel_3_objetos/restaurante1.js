@@ -1,17 +1,13 @@
-// OBJETO CLIENTE
+// 1. CREAMOS LA "MOCHILA" (El Objeto)
 let cliente = {
     nombre: "Jordy",
-    dinero: 100, 
-    hambre: 80   
+    dinero: 100, // Tienes 100 soles
+    hambre: 80   // Tienes mucha hambre (80 puntos de hambre)
 };
 
-// 2. FUNCIONES OBLIGATORIAS
-function ordenarComida(cliente) {
-    cliente.hambre -= 30; // Baja el nivel de hambre
-    console.log(cliente.nombre + " ordenó comida. Hambre actual: " + cliente.hambre);
+// 2. CREAMOS LAS FUNCIONES QUE MODIFICAN LA MOCHILA
+function ordenarComida(persona) {
+    persona.hambre -= 50; // Al comer, el hambre baja 50 puntos
+    console.log(persona.nombre + " pidió un buen ceviche. Su hambre bajó a: " + persona.hambre);
 }
 
-function pagar(cliente) {
-    cliente.dinero -= 40; // Resta dinero de la billetera
-    console.log(cliente.nombre + " pagó la cuenta. Saldo restante: " + cliente.dinero);
-}
