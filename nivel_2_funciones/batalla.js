@@ -12,7 +12,10 @@ function defenderJordy() {
     console.log("Jordy se pone en guardia para reducir el próximo impacto.");
 }
 
-
+function recargarEnergiaJordy() {
+    energiaJordy += 15;
+    console.log("Jordy descansa un momento. Energía actual: " + energiaJordy);
+}.
 
 function ataquealessandro(){
     energiajordy -= 20;
