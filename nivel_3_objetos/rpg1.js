@@ -13,3 +13,9 @@ function subirNivel(personaje) {
     console.log("¡NIVEL UP! " + personaje.nombre + " ahora es nivel " + personaje.nivel);
 }
 
+function recibirDano(personaje) {
+    personaje.vida -= 15;
+    console.log(personaje.nombre + " recibió daño. Vida: " + personaje.vida);
+}
+
+
