@@ -8,6 +8,12 @@ function ataqueJordy() {
     console.log("Jordy ataca. Energía de Alessandro: " + energiaAlessandro);
 }
 
+function defenderJordy() {
+    console.log("Jordy se pone en guardia para reducir el próximo impacto.");
+}
+
+
+
 function ataquealessandro(){
     energiajordy -= 20;
 console.log("QEl ataque ha sido exitoso!, el enemigo tiene" + energiajordy + "de energia restante");
