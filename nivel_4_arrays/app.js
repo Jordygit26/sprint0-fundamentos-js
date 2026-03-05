@@ -9,7 +9,8 @@ let menu = [
 
 // 2) FUNCIÓN: renderizar (mostrar) el menú en pantalla
 function renderMenu() {
- const output = document.getElementById("output");
+ let totalPlatos = contarPlatos();
+  const output = document.getElementById("output");
  output.innerHTML = ""; // limpiar
 
  // crear una lista HTML simple
@@ -21,6 +22,7 @@ function renderMenu() {
  }
 
  html += "</ul>";
+ html+= `Hay un total de ${totalPlatos} platos`
  output.innerHTML = html;
 }
 
