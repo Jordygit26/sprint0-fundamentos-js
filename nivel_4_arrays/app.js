@@ -6,7 +6,9 @@ let menu = [
  { nombre: "Causa rellena", precio: 20, stock:1},
  { nombre: "Cuy chactado" , precio:30, stock:7}
 ];
-
+function contarPlatos(){
+return menu.length;
+}
 // 2) FUNCIÓN: renderizar (mostrar) el menú en pantalla
 function renderMenu() {
  let totalPlatos = contarPlatos();
@@ -32,10 +34,56 @@ function agregarPlatoDemo() {
  menu.push(nuevoPlato);
 }
 
-function contarPlatos(){
-return menu.length;
+
+
+
+function buscarPlatoPorNombre(nombre){
+ const plato = menu.find(p =>
+  p.nombre.toLowerCase() === nombre.toLowerCase());
+  if (!plato){
+    renderLista("Resultado de busqueda es:", ["texto no encontrado"]);
+    return;
+
+  }
+  const texto = `${plato.nombre} - S/${plato.precio} - stock: ${plato.stock}`;
+  renderLista("Resultado de la busqueda", [texto]);
+}
+  
+function filtrarStockBajo(){
+  const platosfiltrados = menu.filter(p => p.stock <= 3);
+ 
+  if (platosfiltrados.length === 0 ){
+   renderLista("stock bajo", ["no hay platos con stock bajo"])
+  return;
+  }
+  const listaDeTextos = platosfiltrados.map(p =>
+    `${p.nombre} - stock: ${p.stock}`
+   );
+   renderLista("stock bajo", listaDeTextos);
 
 }
+
+function obtenerResumenMenu(){
+const resumen = menu.map(p =>
+  `${p.nombre} - S/ ${p.precio}`
+)
+renderLista("resumen del menu", resumen);
+
+}
+function renderLista(titulo, listaDeTextos){
+  const output = document.getElementById("output");
+  let html =  `<h3> ${titulo}</h3><ul>`;
+  for(let i = 0; i < listaDeTextos.length; i++) {
+        html += `<li>${listaDeTextos[i]}</li>`;
+  }
+ html += "</ul>";
+ output.innerHTML = html;
+}
+
+// eventos dia 4 
+
+
+
 // 4) EVENTOS: conectar botones con funciones
 document.getElementById("btnMostrar").addEventListener("click", () => {
  renderMenu();
@@ -45,4 +93,16 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
  agregarPlatoDemo();
  renderMenu();
 });
-buscarPlatoPorNombre(nombre)
+ document.getElementById("btnBuscar").addEventListener("click", () => {
+    const valor = document.getElementById("inputBuscar").value;
+    buscarPlatoPorNombre(valor);
+});
+
+document.getElementById("btnStockBajo").addEventListener("click", () => {
+    filtrarStockBajo();
+});
+
+document.getElementById("btnResumen").addEventListener("click", () => {
+    obtenerResumenMenu();
+});
+
