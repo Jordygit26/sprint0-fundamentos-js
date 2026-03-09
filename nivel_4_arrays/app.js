@@ -45,4 +45,4 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
  agregarPlatoDemo();
  renderMenu();
 });
-
+buscarPlatoPorNombre(nombre)
