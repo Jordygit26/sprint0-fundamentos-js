@@ -31,6 +31,15 @@ function renderMenu() {
 // 3) FUNCIÓN: agregar un plato demo al menú
 function agregarPlatoDemo() {
  const nuevoPlato = { nombre: "Pollo a la olla", precio: 19, stock: 6 };
+ const duplicado = menu.some(p => 
+    p.nombre.toLowerCase() === nuevoPlato.nombre.toLowerCase()
+  );
+
+  if (duplicado) {
+    renderLista("Aviso", ["Ese plato ya está en el menú"]);
+    return;
+  }
+
  menu.push(nuevoPlato);
 }
 
