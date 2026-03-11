@@ -94,12 +94,10 @@ function venderPlato(nombre, cantidad){
  const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 if (!plato) {
  renderLista("Aviso", ["Plato no encontrado"]);
-renderMenu();
 return;
 }
 if (plato.stock < cantidad) {
  renderLista("Aviso", [`Stock insuficiente. El stock actual de ${plato.nombre}: ${plato.stock}`]);
- renderMenu();
  return;
 }
 plato.stock-= cantidad;
