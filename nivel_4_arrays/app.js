@@ -37,10 +37,11 @@ function agregarPlatoDemo() {
 
   if (duplicado) {
     renderLista("Aviso", ["Ese plato ya está en el menú"]);
-    return;
+    return false;
   }
 
  menu.push(nuevoPlato);
+ return true
 }
 
 
@@ -89,6 +90,23 @@ function renderLista(titulo, listaDeTextos){
  output.innerHTML = html;
 }
 
+function venderPlato(nombre, cantidad){
+ const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
+if (!plato) {
+ renderLista("Aviso", ["Plato no encontrado"]);
+renderMenu();
+return;
+}
+if (plato.stock < cantidad) {
+ renderLista("Aviso", [`Stock insuficiente. El stock actual de ${plato.nombre}: ${plato.stock}`]);
+ renderMenu();
+ return;
+}
+plato.stock-= cantidad;
+renderLista("Venta exitosa", [`Se vendieron ${cantidad} x ${plato.nombre}. Stock restante: ${plato.stock}`]);
+renderMenu();
+
+}
 // eventos dia 4 
 
 
@@ -99,8 +117,8 @@ document.getElementById("btnMostrar").addEventListener("click", () => {
 });
 
 document.getElementById("btnAgregar").addEventListener("click", () => {
- agregarPlatoDemo();
- renderMenu();
+ const duplicado = agregarPlatoDemo();
+ if (duplicado) renderMenu();
 });
  document.getElementById("btnBuscar").addEventListener("click", () => {
     const valor = document.getElementById("inputBuscar").value;
@@ -115,3 +133,9 @@ document.getElementById("btnResumen").addEventListener("click", () => {
     obtenerResumenMenu();
 });
 
+document.getElementById("btnVender").addEventListener("click", () => {
+  const nombre = document.getElementById("inputVenderNombre").value;
+  const cantidad = Number(document.getElementById("inputVenderCantidad").value);
+  venderPlato(nombre, cantidad);
+
+});
