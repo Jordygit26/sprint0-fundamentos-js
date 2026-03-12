@@ -2,12 +2,15 @@
 let menu = [
  { nombre: "Arroz con pollo", precio: 12, stock: 5 },
  { nombre: "Lomo saltado", precio: 18, stock: 3 },
- { nombre: "Sopa", precio: 8, stock: 10 }
+ { nombre: "Sopa", precio: 8, stock: 10 },
+ { nombre: "Causa rellena", precio: 20, stock:1},
+ { nombre: "Cuy chactado" , precio:30, stock:7}
 ];
 
 // 2) FUNCIÓN: renderizar (mostrar) el menú en pantalla
 function renderMenu() {
- const output = document.getElementById("output");
+ let totalPlatos = contarPlatos();
+  const output = document.getElementById("output");
  output.innerHTML = ""; // limpiar
 
  // crear una lista HTML simple
@@ -19,15 +22,20 @@ function renderMenu() {
  }
 
  html += "</ul>";
+ html+= `Hay un total de ${totalPlatos} platos`
  output.innerHTML = html;
 }
 
 // 3) FUNCIÓN: agregar un plato demo al menú
 function agregarPlatoDemo() {
- const nuevoPlato = { nombre: "Pollo a la brasa", precio: 20, stock: 4 };
+ const nuevoPlato = { nombre: "Pollo a la olla", precio: 19, stock: 6 };
  menu.push(nuevoPlato);
 }
 
+function contarPlatos(){
+return menu.length;
+
+}
 // 4) EVENTOS: conectar botones con funciones
 document.getElementById("btnMostrar").addEventListener("click", () => {
  renderMenu();
