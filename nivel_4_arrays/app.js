@@ -13,9 +13,8 @@ return menu.length;
 function renderMenu() {
  let totalPlatos = contarPlatos();
   const output = document.getElementById("output");
- output.innerHTML = ""; // limpiar
+ output.innerHTML = ""; 
 
- // crear una lista HTML simple
  let html = "<ul>";
 
  for (let i = 0; i < menu.length; i++) {
@@ -45,16 +44,14 @@ function agregarPlatoDemo() {
 }
 
 
-
-
 function buscarPlatoPorNombre(nombre){
  const plato = menu.find(p =>
   p.nombre.toLowerCase() === nombre.toLowerCase());
   if (!plato){
     renderLista("Resultado de busqueda es:", ["texto no encontrado"]);
     return;
-
   }
+ 
   const texto = `${plato.nombre} - S/${plato.precio} - stock: ${plato.stock}`;
   renderLista("Resultado de la busqueda", [texto]);
 }
@@ -70,7 +67,6 @@ function filtrarStockBajo(){
     `${p.nombre} - stock: ${p.stock}`
    );
    renderLista("stock bajo", listaDeTextos);
-
 }
 
 function obtenerResumenMenu(){
@@ -103,9 +99,7 @@ if (plato.stock < cantidad) {
 plato.stock-= cantidad;
 renderLista("Venta exitosa", [`Se vendieron ${cantidad} x ${plato.nombre}. Stock restante: ${plato.stock}`]);
 renderMenu();
-
 }
-// eventos dia 4 
 
 
 
