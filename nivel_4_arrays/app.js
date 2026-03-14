@@ -1,9 +1,9 @@
 // 1) VARIABLES + OBJETOS + ARRAYS
 let menu = [
  { nombre: "Arroz con pollo", precio: 12, stock: 5 },
- { nombre: "Lomo saltado", precio: 18, stock: 3 },
+ { nombre: "Lomo saltado", precio: 18, stock: 9 },
  { nombre: "Sopa", precio: 8, stock: 10 },
- { nombre: "Causa rellena", precio: 20, stock:1},
+ { nombre: "Causa rellena", precio: 20, stock:5},
  { nombre: "Cuy chactado" , precio:30, stock:7}
 ];
 function contarPlatos(){
@@ -37,7 +37,8 @@ html += `<li class="${clase}">${plato.nombre} — S/ ${plato.precio} — Stock: 
   }
 
  html += "</ul>";
- html+= `Hay un total de ${totalPlatos} platos`
+ html+= `Hay un total de ${totalPlatos} platos`;
+ html += `<p><strong>${verificarEstadoGeneral()}</strong></p>`;
  output.innerHTML = html;
 }
 
@@ -105,6 +106,11 @@ if (!plato) {
  renderLista("Aviso", ["Plato no encontrado"]);
 return;
 }
+  // Regla 2 — NUEVO
+if (plato.stock === 0) {
+    renderLista("Aviso", ["No disponible"]);
+    return;
+ }
 if (plato.stock < cantidad) {
  renderLista("Aviso", [`Stock insuficiente. El stock actual de ${plato.nombre}: ${plato.stock}`]);
  return;
@@ -112,6 +118,26 @@ if (plato.stock < cantidad) {
 plato.stock-= cantidad;
 renderLista("Venta exitosa", [`Se vendieron ${cantidad} x ${plato.nombre}. Stock restante: ${plato.stock}`]);
 renderMenu();
+}
+function verificarEstadoGeneral() {
+  let agotados = 0;
+  let bajos = 0;
+
+  for (let i = 0; i < menu.length; i++) {
+    if (menu[i].stock === 0) {
+      agotados++;
+    } else if (menu[i].stock <= 3) {
+      bajos++;
+    }
+  }
+
+  if (agotados > 0) {
+    return "Hay platos agotados";
+  } else if (bajos > 0) {
+    return "Hay platos con stock bajo";
+  } else {
+    return "Todo disponible";
+  }
 }
 
 // 4) EVENTOS: conectar botones con funciones
@@ -142,3 +168,4 @@ document.getElementById("btnVender").addEventListener("click", () => {
   venderPlato(nombre, cantidad);
 
 });
+
