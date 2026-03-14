@@ -19,7 +19,6 @@ function renderMenu() {
 
  for (let i = 0; i < menu.length; i++) {
    const plato = menu[i];
-
         // Reglas de Estado del Día 5
         let clase = "normal";
         let textoExtra = "";
@@ -34,6 +33,8 @@ function renderMenu() {
 
 html += `<li class="${clase}">${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock}${textoExtra}</li>`;
 
+ 
+  }
 
  html += "</ul>";
  html+= `Hay un total de ${totalPlatos} platos`
@@ -55,7 +56,6 @@ function agregarPlatoDemo() {
  menu.push(nuevoPlato);
  return true
 }
-
 
 function buscarPlatoPorNombre(nombre){
  const plato = menu.find(p =>
@@ -113,8 +113,6 @@ plato.stock-= cantidad;
 renderLista("Venta exitosa", [`Se vendieron ${cantidad} x ${plato.nombre}. Stock restante: ${plato.stock}`]);
 renderMenu();
 }
-
-
 
 // 4) EVENTOS: conectar botones con funciones
 document.getElementById("btnMostrar").addEventListener("click", () => {
