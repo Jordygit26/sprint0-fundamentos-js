@@ -32,3 +32,6 @@ export function actualizarStock(nombre, nuevoStock) {
   }
   return false;
 }
+export function agregarPlato(plato) {
+  menu.push(plato);
+}
